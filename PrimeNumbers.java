@@ -1,14 +1,23 @@
-print("Prime numbers between 0 and 500 are:")
+public class PrimeNumbers {
+    public static void main(String[] args) {
 
-for num in range(2, 501):
+        System.out.println("Prime numbers between 0 and 500 are:");
 
-    is_prime = True
+        for (int num = 2; num <= 500; num++) {
 
-    for i in range(2, int(num ** 0.5) + 1):
+            boolean isPrime = true;
 
-        if num % i == 0:
-            is_prime = False
-            break
+            for (int i = 2; i <= Math.sqrt(num); i++) {
 
-    if is_prime:
-        print(num, end=" ")
+                if (num % i == 0) {
+                    isPrime = false;
+                    break;
+                }
+            }
+
+            if (isPrime) {
+                System.out.print(num + " ");
+            }
+        }
+    }
+}
